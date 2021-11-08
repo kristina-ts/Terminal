@@ -1,0 +1,14 @@
+Testing checklist
+=================
+
+Test case #
+[Summary]
+
+Expected result: 
+Actual result:
+
+Passed:
+
+Comment:
+
+--------
