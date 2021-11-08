@@ -1,0 +1,39 @@
+Bug Report
+==========
+
+Bug ID:
+
+Bug Name:  
+Summary:
+
+Submit Date:          
+Reporter:
+
+
+Description
+===========
+
+
+
+Steps to reproduce
+------------------
+
+
+
+Expected result
+---------------
+
+
+
+Actual result
+-------------
+
+
+
+Screenshot
+----------
+
+
+
+Notes
+-----
