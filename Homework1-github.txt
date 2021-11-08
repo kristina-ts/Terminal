@@ -1,0 +1,226 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git branch postman
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git branch jmeter
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git branch checklists
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git branch bug-reports
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git branch sql
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git branch charles
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git branch mobile-testing
+
+
+2. Запушить все ветки на внешний репозиторий
+git push -u origin --all
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ vim bug-report-1.txt
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ mv bug-report-1.txt bug-report-template.txt
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git status
+On branch bug-reports
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bug-report-1.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    bug-report-1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug-report-template.txt
+
+
+4. Запушить структуру баг репорта на внешний репозиторий
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git add bug-report-1.txt
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git status
+On branch bug-reports
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug-report-template.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git add bug-report-template.txt
+warning: LF will be replaced by CRLF in bug-report-template.txt.
+The file will have its original line endings in your working directory
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git commit -m "Create bug report template"
+[bug-reports f24d6f0] Create bug report template
+ 1 file changed, 39 insertions(+)
+ create mode 100644 bug-report-template.txt
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git push
+fatal: The current branch bug-reports has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin bug-reports
+
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git push -u origin bug-reports
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 493 bytes | 70.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kristina-ts/Terminal.git
+   dd28dd6..f24d6f0  bug-reports -> bug-reports
+Branch 'bug-reports' set up to track remote branch 'bug-reports' from 'origin'.
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git push
+Everything up-to-date
+
+
+5. Вмержить ветку Bag Reports в Main
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git checkout mail
+error: pathspec 'mail' did not match any file(s) known to git
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (bug-reports)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git merge bug-reports
+Updating dd28dd6..f24d6f0
+Fast-forward
+ bug-report-template.txt | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+ create mode 100644 bug-report-template.txt
+
+6. Запушить main на внешний репозиторий.
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ ll
+total 6
+-rw-r--r-- 1 Kristina 197121 3836 Nov  3 23:30 Homework_1_terminal.txt
+-rw-r--r-- 1 Kristina 197121   10 Nov  3 21:56 README.md
+-rw-r--r-- 1 Kristina 197121  299 Nov  8 22:59 bug-report-template.txt
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kristina-ts/Terminal.git
+   dd28dd6..f24d6f0  main -> main
+
+7. В ветке CheckLists набросать структуру чек листа.
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git checkout checklists
+Switched to branch 'checklists'
+Your branch is up to date with 'origin/checklists'.
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (checklists)
+$ vim checklist-template.txt
+
+8. Запушить структуру на внешний репозиторий
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (checklists)
+$ git add checklist-template.txt
+warning: LF will be replaced by CRLF in checklist-template.txt.
+The file will have its original line endings in your working directory
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (checklists)
+$ git commit -m "Create checklist template"
+[checklists 75b8652] Create checklist template
+ 1 file changed, 14 insertions(+)
+ create mode 100644 checklist-template.txt
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (checklists)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 441 bytes | 220.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kristina-ts/Terminal.git
+   dd28dd6..75b8652  checklists -> checklists
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+https://github.com/kristina-ts/Terminal/pull/1
+
+10.Синхронизировать Внешнюю и Локальную ветки Main
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (checklists)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 721 bytes | 8.00 KiB/s, done.
+From https://github.com/kristina-ts/Terminal
+   f24d6f0..6188a16  main       -> origin/main
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git status
+On branch main
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+Kristina@Kristina-PC MINGW64 /d/GitHub/Terminal (main)
+$ git pull
+Updating f24d6f0..6188a16
+Fast-forward
+ checklist-template.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 checklist-template.txt
+
